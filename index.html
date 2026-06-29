@@ -83,7 +83,6 @@
       margin-top: 0.5rem;
     }
 
-    /* Esconde os checkbox */
     .modal-checkbox {
       display: none;
     }
@@ -114,7 +113,6 @@
       border-color: #ffb0cc;
     }
 
-    /* Label que abre o modal */
     .abrir-modal {
       cursor: pointer;
       width: 100%;
@@ -260,7 +258,6 @@
       overflow: hidden;
     }
 
-    /* Carrossel com scroll horizontal (sem JS) */
     .carrossel-scroll {
       display: flex;
       overflow-x: auto;
@@ -298,7 +295,6 @@
       border-radius: 20px;
     }
 
-    /* Navegação do carrossel com links âncora */
     .nav-carrossel {
       position: absolute;
       bottom: 15px;
@@ -330,6 +326,44 @@
       transform: scale(1.2);
     }
 
+    /* Botões de seta do carrossel */
+    .seta-carrossel {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #a63c5e;
+      z-index: 10;
+      transition: 0.3s;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .seta-carrossel:hover {
+      background: #ff6f91;
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .seta-esquerda {
+      left: 10px;
+    }
+
+    .seta-direita {
+      right: 10px;
+    }
+
     .modal-descricao {
       flex: 1;
       padding: 2rem 1.5rem;
@@ -353,7 +387,6 @@
       line-height: 1.6;
     }
 
-    /* Botão fechar com label */
     .fechar-modal {
       position: absolute;
       top: 15px;
@@ -380,6 +413,134 @@
       background: #ff6f91;
       color: white;
       transform: rotate(90deg);
+    }
+
+    /* ===== TIMELINE SECTION ===== */
+    .timeline-section {
+      margin: 2rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .timeline-section h2 {
+      color: #a63c5e;
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.5rem;
+      background: rgba(255, 235, 242, 0.5);
+      backdrop-filter: blur(4px);
+      padding: 1.2rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid #ffb7d0;
+    }
+
+    .timeline-item {
+      font-size: 1rem;
+      color: #5e3a47;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+      border: 1px solid #ffd9e8;
+    }
+
+    .timeline-item .emoji {
+      font-size: 1.2rem;
+    }
+
+    .timeline-item .data {
+      font-weight: 300;
+      color: #a0637a;
+      font-size: 0.9rem;
+      margin-left: 0.2rem;
+    }
+
+    /* ===== RANDOM MEMORY SECTION ===== */
+    .random-section {
+      margin: 2rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .random-btn {
+      background: linear-gradient(145deg, #ff8aaa, #ff6f91);
+      border: none;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 0.8rem 2.5rem;
+      border-radius: 60px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255, 100, 150, 0.4);
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(2px);
+      letter-spacing: 0.5px;
+    }
+
+    .random-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(255, 80, 130, 0.5);
+    }
+
+    .random-btn:active {
+      transform: scale(0.97);
+    }
+
+    .random-result {
+      margin-top: 1.2rem;
+      background: rgba(255, 245, 248, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      padding: 1.5rem;
+      border: 1px solid #ffb7d0;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .random-result .empty-memory {
+      color: #b05a78;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    .random-result .memory-card {
+      background: rgba(255, 240, 245, 0.8);
+      padding: 1rem 1.5rem;
+      border-radius: 30px;
+      border: 1px solid #ffb7d0;
+      width: 100%;
+      animation: fadeInMemory 0.4s ease;
+    }
+
+    @keyframes fadeInMemory {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .random-result .memory-card h3 {
+      color: #a63c5e;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .random-result .memory-card p {
+      color: #5e3a47;
+      font-size: 1rem;
     }
 
     /* Responsividade */
@@ -411,6 +572,24 @@
 
       .modal-descricao p {
         font-size: 0.95rem;
+      }
+
+      .seta-carrossel {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+      }
+
+      .timeline {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 30px;
+        padding: 1rem;
+      }
+
+      .timeline-item {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -464,6 +643,26 @@
       <h1>💗 Nossas Memórias 💗</h1>
       <div class="sub">
         <span class="heart">🌸</span> clique na foto para ampliar <span class="heart">🌸</span>
+      </div>
+    </div>
+
+    <!-- ===== LINHA DO TEMPO ===== -->
+    <div class="timeline-section">
+      <h2>💕 Nossa Linha do Tempo</h2>
+      <div class="timeline">
+        <div class="timeline-item"><span class="emoji">💬</span> Primeira conversa <span class="data">— 12/03/2025</span></div>
+        <div class="timeline-item"><span class="emoji">📞</span> Primeira ligação <span class="data">— 15/03/2025</span></div>
+        <div class="timeline-item"><span class="emoji">🍽️</span> Primeiro encontro <span class="data">— 20/03/2025</span></div>
+        <div class="timeline-item"><span class="emoji">📸</span> Primeira foto juntos <span class="data">— 22/03/2025</span></div>
+        <div class="timeline-item"><span class="emoji">✈️</span> Primeira viagem <span class="data">— 10/06/2025</span></div>
+      </div>
+    </div>
+
+    <!-- ===== BOTÃO MEMÓRIA ALEATÓRIA ===== -->
+    <div class="random-section">
+      <button class="random-btn" id="randomMemoryBtn">🌸 Me mostre uma memória</button>
+      <div class="random-result" id="randomResult">
+        <p class="empty-memory">Clique no botão para reviver um momento especial ✨</p>
       </div>
     </div>
 
@@ -545,9 +744,9 @@
     </div>
   </div>
 
-  <!-- ===== MODAIS (CSS PURO, SEM JAVASCRIPT) ===== -->
+  <!-- ===== MODAIS COM CARROSSEL E SETAS ===== -->
 
-  <!-- Modal 1 - Segunda Vez Que Saímos (4 fotos) -->
+  <!-- Modal 1 - Segunda Vez Que Saímos (2 fotos) -->
   <input type="checkbox" id="modal1" class="modal-checkbox">
   <div class="modal-overlay">
     <div class="modal-content">
@@ -555,15 +754,15 @@
       <div class="modal-foto">
         <div class="carrossel-scroll" id="carrossel1">
           <img src="https://i.postimg.cc/sfq4HhTv/Whats-App-Image-2026-06-24-at-18-05-33.jpg" alt="Foto 1" />
-          <img src="https://i.postimg.cc/FsSxbrX1/foto-1.jpg" alt="Foto 2" />
-          <img src="https://i.postimg.cc/rFgwPWkJ/foto-1-2.jpg" alt="Foto 3" />
+          <img src="https://i.postimg.cc/rFgwPWkJ/foto-1-2.jpg" alt="Foto 2" />
+          <img src="https://i.postimg.cc/FsSxbrX1/foto-1.jpg" alt="Foto 3" />
           <img src="https://i.postimg.cc/T27sNYs3/foto-1-3.jpg" alt="Foto 4" />
         </div>
+        <button class="seta-carrossel seta-esquerda" onclick="moverCarrossel('carrossel1', -1)">‹</button>
+        <button class="seta-carrossel seta-direita" onclick="moverCarrossel('carrossel1', 1)">›</button>
         <div class="nav-carrossel">
-          <a href="#carrossel1"></a>
-          <a href="#carrossel1"></a>
-          <a href="#carrossel1"></a>
-          <a href="#carrossel1"></a>
+          <a href="#carrossel1" onclick="irParaSlide('carrossel1', 0)"></a>
+          <a href="#carrossel1" onclick="irParaSlide('carrossel1', 1)"></a>
         </div>
       </div>
       <div class="modal-descricao">
@@ -579,9 +778,10 @@
     <div class="modal-content">
       <label for="modal2" class="fechar-modal">✕</label>
       <div class="modal-foto">
-        <div class="carrossel-scroll">
+        <div class="carrossel-scroll" id="carrossel2">
           <img src="https://i.postimg.cc/gcSTzjNW/casa-dele.jpg" alt="Casa dele" />
         </div>
+        <!-- Sem setas para 1 foto -->
       </div>
       <div class="modal-descricao">
         <h2>Domingo Juntos</h2>
@@ -601,10 +801,12 @@
           <img src="https://i.postimg.cc/053Sn1cF/saida.jpg" alt="Foto 2" />
           <img src="https://i.postimg.cc/053Sn1cF/saida.jpg" alt="Foto 3" />
         </div>
+        <button class="seta-carrossel seta-esquerda" onclick="moverCarrossel('carrossel3', -1)">‹</button>
+        <button class="seta-carrossel seta-direita" onclick="moverCarrossel('carrossel3', 1)">›</button>
         <div class="nav-carrossel">
-          <a href="#carrossel3"></a>
-          <a href="#carrossel3"></a>
-          <a href="#carrossel3"></a>
+          <a href="#carrossel3" onclick="irParaSlide('carrossel3', 0)"></a>
+          <a href="#carrossel3" onclick="irParaSlide('carrossel3', 1)"></a>
+          <a href="#carrossel3" onclick="irParaSlide('carrossel3', 2)"></a>
         </div>
       </div>
       <div class="modal-descricao">
@@ -620,7 +822,7 @@
     <div class="modal-content">
       <label for="modal4" class="fechar-modal">✕</label>
       <div class="modal-foto">
-        <div class="carrossel-scroll">
+        <div class="carrossel-scroll" id="carrossel4">
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f5d3e0'/%3E%3Ccircle cx='100' cy='100' r='55' fill='%23ff90b0'/%3E%3Ccircle cx='75' cy='80' r='12' fill='%23ffe4ed'/%3E%3Ccircle cx='125' cy='80' r='12' fill='%23ffe4ed'/%3E%3Cpath d='M75 115 Q100 135 125 115' stroke='%23ff4d7a' stroke-width='7' fill='none'/%3E%3Cpolygon points='100,40 110,65 135,65 115,80 125,105 100,90 75,105 85,80 65,65 90,65' fill='%23ffd966'/%3E%3C/svg%3E" alt="Natal" />
         </div>
       </div>
@@ -637,7 +839,7 @@
     <div class="modal-content">
       <label for="modal5" class="fechar-modal">✕</label>
       <div class="modal-foto">
-        <div class="carrossel-scroll">
+        <div class="carrossel-scroll" id="carrossel5">
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23fad4e0'/%3E%3Crect x='30' y='50' width='140' height='100' rx='15' fill='%23fa8aa9'/%3E%3Ccircle cx='80' cy='100' r='18' fill='%23ffc2d1'/%3E%3Ccircle cx='120' cy='100' r='18' fill='%23ffc2d1'/%3E%3Crect x='50' y='40' width='20' height='15' fill='%23ffb0c3' rx='5'/%3E%3Crect x='130' y='40' width='20' height='15' fill='%23ffb0c3' rx='5'/%3E%3C/svg%3E" alt="Filme" />
         </div>
       </div>
@@ -654,7 +856,7 @@
     <div class="modal-content">
       <label for="modal6" class="fechar-modal">✕</label>
       <div class="modal-foto">
-        <div class="carrossel-scroll">
+        <div class="carrossel-scroll" id="carrossel6">
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23fcdae7'/%3E%3Ccircle cx='100' cy='90' r='45' fill='%23ff8faf'/%3E%3Ccircle cx='70' cy='80' r='8' fill='%23ffe6ef'/%3E%3Ccircle cx='130' cy='80' r='8' fill='%23ffe6ef'/%3E%3Crect x='80' y='125' width='40' height='30' fill='%23ff6f91' rx='10'/%3E%3Ccircle cx='100' cy='140' r='10' fill='%23ffd966'/%3E%3C/svg%3E" alt="Aniversário" />
         </div>
       </div>
@@ -666,10 +868,58 @@
   </div>
 
   <script>
-    // Só para a funcionalidade de mostrar/esconder descrição ao clicar no card (sem interferir no modal)
+    // Função para mover o carrossel com as setas
+    function moverCarrossel(id, direcao) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      
+      const scrollAmount = container.querySelector('img')?.offsetWidth || 0;
+      const novoScroll = container.scrollLeft + (scrollAmount * direcao);
+      
+      container.scrollTo({
+        left: novoScroll,
+        behavior: 'smooth'
+      });
+    }
+
+    // Função para ir para um slide específico (usado nos dots)
+    function irParaSlide(id, index) {
+      const container = document.getElementById(id);
+      if (!container) return;
+      
+      const scrollAmount = container.querySelector('img')?.offsetWidth || 0;
+      container.scrollTo({
+        left: scrollAmount * index,
+        behavior: 'smooth'
+      });
+    }
+
+    // ===== BOTÃO DE MEMÓRIA ALEATÓRIA =====
+    const memorias = [
+      { titulo: "Segunda Vez Que Saímos", descricao: "A segunda vez que saímos depois dele conhecer meu pai... e eu ainda lembro do nervosismo dele. Confesso que achei a coisa mais fofa" },
+      { titulo: "Domingo Juntos", descricao: "Lembro daquele domingo na casa dele. Estávamos abraçados na cozinha quando ele disse que eu estava muito linda. Pode parecer simples, mas meu coração guardou esse momento com todo carinho do mundo" },
+      { titulo: "Ponte Hercílio Luz", descricao: "Naquele domingo, decidimos ir até a Ponte Hercílio Luz. As luzes da ponte brilhavam em um rosa choque lindo, o céu estava estrelado e, de repente, ele me pegou nos braços. Fiquei morrendo de vergonha, mas adorei cada segundo." },
+      { titulo: "🎄 Natal", descricao: "Natal juntos, a foto mais fofa com nosso gato 🎄🐱" },
+      { titulo: "🎬 Filme", descricao: "Aquele dia de chuva, ficamos vendo filmes e comendo pipoca 🍿" },
+      { titulo: "🎂 Aniversário", descricao: "Aniversário surpresa, bolo de morango e muitos beijos 🍓🎂" }
+    ];
+
+    document.getElementById('randomMemoryBtn').addEventListener('click', function() {
+      const randomIndex = Math.floor(Math.random() * memorias.length);
+      const memoria = memorias[randomIndex];
+      
+      const resultDiv = document.getElementById('randomResult');
+      resultDiv.innerHTML = `
+        <div class="memory-card">
+          <h3>💖 ${memoria.titulo}</h3>
+          <p>${memoria.descricao}</p>
+        </div>
+      `;
+    });
+
+    // Funcionalidade de mostrar/esconder descrição ao clicar no card (sem interferir no modal)
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', function(e) {
-        // Se clicou na foto (label), não ativa a descrição
         if (e.target.closest('.abrir-modal')) {
           return;
         }
